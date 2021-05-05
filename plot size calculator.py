@@ -36,8 +36,7 @@ for i in range(int(target/x32)):
             for l in range(int(target/x35)):
                 intermediate=x32*i+x33*j+x34*k+x35*l
                 if (intermediate > curr_max and intermediate < target):
-                    curr_max=intermediate
-                    candidates.append(curr_max)
+                    candidates.append(intermediate)
                     sol_a.append(i)
                     sol_b.append(j)
                     sol_c.append(k)

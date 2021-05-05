@@ -34,7 +34,7 @@ for i in range(int(target/x32)):
     for j in range(int(target/x33)):
         for k in range(int(target/x34)):
             for l in range(int(target/x35)):
-                intermediate=x32*i+x33*j+x34*k
+                intermediate=x32*i+x33*j+x34*k+x35*l
                 if (intermediate > curr_max and intermediate < target):
                     curr_max=intermediate
                     candidates.append(curr_max)

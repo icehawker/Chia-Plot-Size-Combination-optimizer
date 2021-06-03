@@ -29,25 +29,27 @@ sol_d.append(0)
 intermediate=0
 a=0
 
-# K32 to K35
+# K32 to K34/35
+# K35 disabled by default as too few good solutions depend on it and it's a big hassle to create for most of us. 
+# Uncomment #'s below and re-indent relevant content to reactivate K35s.
 for i in range(int(target/x32)):
     for j in range(int(target/x33)):
         for k in range(int(target/x34)):
-            for l in range(int(target/x35)):
-                intermediate=x32*i+x33*j+x34*k+x35*l
-                if (intermediate > curr_max and intermediate < target):
-                    candidates.append(intermediate)
-                    sol_a.append(i)
-                    sol_b.append(j)
-                    sol_c.append(k)
-                    sol_d.append(l)
-                intermediate=0
+            #for l in range(int(target/x35)):
+            intermediate=x32*i+x33*j+x34*k+x35*l
+            if (intermediate > curr_max and intermediate < target):
+                candidates.append(intermediate)
+                sol_a.append(i)
+                sol_b.append(j)
+                sol_c.append(k)
+                #sol_d.append(l)
+            intermediate=0
                 
 for result in range(len(candidates)-1,-1,-1):
     print("K32: " + str(sol_a[result]) + ", " +
           "K33: " + str(sol_b[result]) + ", " +
           "K34: " + str(sol_c[result]) + ", " +
-          "K35: " + str(sol_d[result]) + ", " +
+          #"K35: " + str(sol_d[result]) + ", " +
           "Total size (GiB) " + str(round(candidates[result],6)) + ", " +
           "Utilization (%)" + str(round(candidates[result]/target,5)*100)
           )
